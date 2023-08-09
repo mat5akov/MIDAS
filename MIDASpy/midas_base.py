@@ -809,6 +809,7 @@ class Midas(object):
             return self
 
     def generate_samples(self,
+                         X,
                          m=50,
                          verbose=True):
         """
@@ -828,7 +829,8 @@ class Midas(object):
         Returns:
           Self
         """
-
+        self.X = X
+                             
         if not self.model_built:
             raise AttributeError("The computation graph must be built before the model"
                                  " can be trained")
